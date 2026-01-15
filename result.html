@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="card">
+<h1>🎯 Quiz Result</h1>
+<div class="score">{{ score }} / {{ total }}</div>
+
+{% for r in results %}
+<div class="question">
+<p><b>{{ r.question }}</b></p>
+
+{% for opt in r.options %}
+<p class="
+{% if opt == r.correct %}correct
+{% elif opt == r.selected %}wrong
+{% endif %}
+">
+{{ opt }}
+</p>
+{% endfor %}
+</div>
+{% endfor %}
+
+<a href="/"><button>🏠 Go Home</button></a>
+</div>
+
+</body>
+</html>

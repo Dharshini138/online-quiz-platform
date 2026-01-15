@@ -1,0 +1,63 @@
+body{
+background: linear-gradient(135deg,#7f7fd5,#86a8e7,#91eae4);
+font-family: 'Segoe UI';
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.card{
+background:white;
+width:380px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+h1{text-align:center;color:#5a4bff}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+background:linear-gradient(90deg,#667eea,#764ba2);
+color:white;
+font-size:16px;
+margin-top:15px;
+cursor:pointer;
+}
+
+.option{
+display:block;
+background:#f4f6ff;
+padding:10px;
+border-radius:10px;
+margin:8px 0;
+cursor:pointer;
+}
+
+.progress{
+height:8px;
+background:#ddd;
+border-radius:10px;
+overflow:hidden;
+margin:15px 0;
+}
+
+#bar{
+height:100%;
+width:0%;
+background:#667eea;
+transition:0.3s;
+}
+
+.correct{color:green;font-weight:bold}
+.wrong{color:red;font-weight:bold}
+
+.score{
+font-size:28px;
+text-align:center;
+color:#5a4bff;
+}

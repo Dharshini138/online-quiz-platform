@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script>
+let total = {questionslength };
+let answered = 0;
+
+function updateProgress() {
+  answered++;
+  document.getElementById("bar").style.width =
+    (answered/total)*100 + "%";
+}
+</script>
+</head>
+<body>
+
+<form method="POST" action="/submit">
+<div class="card">
+
+<h1>📝 Quiz Time</h1>
+
+<div class="progress">
+  <div id="bar"></div>
+</div>
+
+{% for q in questions %}
+<div class="question">
+<h3>{{ loop.index }}. {{ q[1] }}</h3>
+
+{% for opt in q[2:6] %}
+<label class="option">
+<input type="radio" name="q{{ q[0] }}" value="{{ opt }}" onclick="updateProgress()" required>
+{{ opt }}
+</label>
+{% endfor %}
+
+</div>
+{% endfor %}
+
+<button type="submit">✔ Submit Quiz</button>
+</div>
+</form>
+
+</body>
+</html>
